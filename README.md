@@ -1,4 +1,4 @@
-<img src="https://files.catbox.moe/01irqh.png" alt="tm" width="300"/>
+<img src="https://files.catbox.moe/01irqh.png" alt="tm" width="1000"/>
 
 # 💻 my personal website
 
