@@ -1,184 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta -->
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sophie Rain</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #070707;
-        }
-        header {
-            background: #040404;
-            color: #fff;
-            padding: 10px 20px;
-            text-align: center;
-        }
-        nav {
-            margin: 20px 0;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #333;
-        }
-        .video-container {
-            display: flex;
-            justify-content: center;
-            margin: 20px;
-        }
-        video {
-            max-width: 100%;
-            height: auto;
-        }
-        .home {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 80vh;
-        }
-        .hidden {
-            display: none;
-        }
-    </style>
+    <meta name="robots" content="follow, index">
+
+    <!-- Title -->
+    <title>- my website</title>
+
+    <!-- Favicon -->
+
+    <link rel="shortcut icon" href="images/tm.ico">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous">
+
 </head>
 <body>
+    <!-- Div -->
+    <div id="div" hidden></div>
 
-<header>
-    <a href="index.html">
-    <h1>Sophie Rain</h1>
-    </a>
-</header>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <div class="header-logo">
+                <img src="images/cat.gif" alt="cat">
+            </div>
 
-<div id="home" class="home">
-    <h2>Welcome to Sophie Rain's Video Gallery</h2>
-    <button onclick="showVideoSection()">Browse Videos</button>
-</div>
+            <div class="header-links">
+                <ul class="nav-links">
+                    <li class="nav-link"><a draggable='false' href='/stats'>Stats</a></li>
+                    <!-- <li class="nav-link"><a href="about.html">About</a></li> -->
+                    <!-- <li class="nav-link"><a href="contact.html">Contact</a></li> -->
+                </ul>
+            </div>
+        </nav>
+    </header>
 
-<div id="video-section" class="hidden">
-    <nav>
-        <a href="#" onclick="loadVideo('a.mp4')">Video 1</a>
-        <a href="#" onclick="loadVideo('b.mp4')">Video 2</a>
-        <a href="#" onclick="loadVideo('c.mp4')">Video 3</a>
-        <a href="#" onclick="loadVideo('d.mp4')">Video 4</a>
-        <a href="#" onclick="loadVideo('e.mp4')">Video 5</a>
-        <a href="#" onclick="loadVideo('f.mp4')">Video 6</a>
-        <a href="#" onclick="loadVideo('g.mp4')">Video 7</a>
-        <a href="#" onclick="loadVideo('h.mp4')">Video 8</a>
-        <a href="#" onclick="loadVideo('i.mp4')">Video 9</a>
-        <a href="#" onclick="loadVideo('j.mp4')">Video 10</a>
-        <a href="#" onclick="loadVideo('k.mp4')">Video 11</a>
-    </nav>
-
-    <div class="video-container">
-        <video id="video-id" controls>
-            <source id="video-source" src="video1.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-        </video>
-    </div>
-</div>
-
-<script>
-    var myFP;
-
-    function showVideoSection() {
-        document.getElementById('home').classList.add('hidden');
-        document.getElementById('video-section').classList.remove('hidden');
-        initializeFluidPlayer();
-    }
-
-    function initializeFluidPlayer() {
-        myFP = fluidPlayer('video-id', {
-            "layoutControls": {
-                "controlBar": {
-                    "autoHideTimeout": 3,
-                    "animated": true,
-                    "autoHide": true
-                },
-                "htmlOnPauseBlock": {
-                    "html": null,
-                    "height": null,
-                    "width": null
-                },
-                "autoPlay": false,
-                "mute": true,
-                "allowTheatre": true,
-                "playPauseAnimation": false,
-                "playbackRateEnabled": false,
-                "allowDownload": false,
-                "playButtonShowing": false,
-                "fillToContainer": false,
-                "posterImage": ""
-            },
-            "vastOptions": {
-                "adList": [],
-                "adCTAText": false,
-                "adCTATextPosition": ""
-            }
-        });
-    }
-
-    function loadVideo(videoFile) {
-        var videoSource = document.getElementById('video-source');
-        videoSource.src = videoFile;
-        var video = document.getElementById('video-id');
-        video.load();
-        myFP = fluidPlayer('video-id'); // Reinitialize Fluid Player
-    }
-</script>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-    }
-    header {
-        background: #333;
-        color: #fff;
-        padding: 10px 20px;
-        text-align: center;
-    }
-    nav {
-        margin: 20px 0;
-    }
-    nav a {
-        margin: 0 15px;
-        text-decoration: none;
-        color: #333;
-    }
-    .video-container {
-        display: flex;
-        justify-content: center;
-        margin: 20px;
-        position: relative; /* Added for fullscreen option */
-        width: 100vw; /* Full viewport width */
-        height: 100vh; /* Full viewport height */
-    }
-    .video-container video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 50%; /* Full width */
-        height: 50%; /* Full height */
-        object-fit: center; /* Cover the container while maintaining aspect ratio */
-    }
-    .home {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 80vh;
-    }
-    .hidden {
-        display: none;
-    }
-</style>
+    <!-- Main -->
+    <section class="index">
+        <div class="card">
+            <img src="https://avatars.githubusercontent.com/u/98256511?v=4" alt="tm">
+            <div class="card-text">
+                <p>hello, my name is</p>
+                <h1>trademark</h1>
+                <p>dev, gamer, student, youtube enthusiast | press g or y on your keyboard</p>
+            </div>
+            <div class="card-links">
+                <ul>
+                    <li><a draggable="false" target="_blank" href="https://github.com/trmrk"><i class="fab fa-github"></i></a></li>
+                    <li><a draggable="false" target="_blank" href="https://www.youtube.com/@ttrmrk"><i class="fab fa-youtube"></i></a></li>
+                    <li><a draggable="false" target="_blank" href="https://twitter.com/ttrademark"><i class="fab fa-twitter"></i></a></li>
+                    <li><a draggable="false" target="_blank" href="discordapp.com/users/606670530938011651"><i class="fab fa-discord"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
 </body>
 </html>
