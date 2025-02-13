@@ -376,6 +376,14 @@ img {
     text-shadow: 0 0 15px rgba(88, 101, 242, 0.6);
   }
 
+  .card-links ul li a:hover .fa-globe {
+    text-shadow: 0 0 15px rgba(227, 88, 242, 0.6);
+  }
+
+  .card-links ul li a:hover .fa-steam {
+    text-shadow: 0 0 15px rgba(96, 161, 214, 0.6);
+  }
+
 /* Hide the default cursor on clickable elements */
 a, button, .card-links ul li a {
     cursor: none; /* Hide the default cursor */
