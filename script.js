@@ -25,12 +25,14 @@ onmouseup = function(e) {
 };
 
 document.addEventListener("keydown", function(event ) {
-  // Check if the 'y' key was pressed
-  if (event.keyCode === 89) {
-    window.open("https://ttrademark.netlify.app/secret.txt", "_blank");
-  }
   // Check if the 'g' key was pressed
-  else if (event.keyCode === 71) {
+  if (event.keyCode === 71) {
     window.open("https://ttrademark.netlify.app/stats", "_blank");
   }
+});
+
+document.addEventListener('mousemove', (e) => {
+  const cursor = document.querySelector('.cursor');
+  cursor.style.left = `${e.pageX}px`;
+  cursor.style.top = `${e.pageY}px`;
 });
