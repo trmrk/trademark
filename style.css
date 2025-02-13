@@ -14,6 +14,7 @@ body {
     -khtml-user-select: none; /* Konqueror HTML */
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
+    cursor: none; /* Hide the default cursor for the entire body */
 }
 
 body::-webkit-scrollbar {
@@ -30,6 +31,7 @@ img {
     -webkit-user-drag: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+    cursor: none; /* Hide the default cursor */
 }
 
 
@@ -138,6 +140,7 @@ section.index .card img {
     border-radius: 100%;
     border: 5px solid #3b3d4e93;
     cursor: pointer;
+    cursor: none; /* Hide the default cursor */
 }
 
 section.index .card .card-text {
@@ -205,6 +208,7 @@ section.index .card .card-links ul li a:hover {
         border-radius: 100%;
         border: 5px solid #3b3d4e93;
         cursor: pointer;
+        cursor: none; /* Hide the default cursor */
     }
     section.index .card .card-text {
         text-align: center;
@@ -326,6 +330,7 @@ section.index .card .card-links ul li a:hover {
 
 img {
     animation: fadeInDown 0.5s;
+    cursor: none; /* Hide the default cursor */
 }
 
 .header-links {
@@ -343,4 +348,51 @@ img {
     position: absolute;
     background: rgb(0, 102, 128);
     opacity: 0.3;
+}
+
+/* Social Icons Hover Effects */
+.card-links ul li a i {
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+  
+  .card-links ul li a:hover i {
+    transform: translateY(-3px);
+  }
+  
+  .card-links ul li a:hover .fa-github {
+    text-shadow: 0 0 15px rgba(112, 112, 112, 0.6);
+  }
+  
+  .card-links ul li a:hover .fa-youtube {
+    text-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+  }
+  
+  .card-links ul li a:hover .fa-twitter {
+    text-shadow: 0 0 15px rgba(93, 196, 255, 0.6);
+  }
+  
+  .card-links ul li a:hover .fa-discord {
+    text-shadow: 0 0 15px rgba(88, 101, 242, 0.6);
+  }
+
+/* Hide the default cursor on clickable elements */
+a, button, .card-links ul li a {
+    cursor: none; /* Hide the default cursor */
+}
+
+.cursor {
+    position: fixed;
+    width: 20px; /* Size of the cursor */
+    height: 20px; /* Size of the cursor */
+    border-radius: 100%; /* Make it circular */
+    background-color: rgba(255, 255, 255, 0.468); /* Cursor color */
+    pointer-events: none; /* Prevent it from interfering with clicks */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Glow effect */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.cursor:hover {
+    background-color: rgba(255, 255, 255, 1); /* Change color on hover */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1); /* Increase glow on hover */
 }
